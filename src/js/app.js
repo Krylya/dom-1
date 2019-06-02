@@ -6,19 +6,19 @@ let lastNum = 0;
 const container = document.querySelector('.container');
 const cells = container.querySelectorAll('.item');
 
-setInterval(addImageToRandomCell, 3000);
+// генерируем случайное число
+const randomNumber = () => {
+  const rand = Math.floor(Math.random() * 16);
+  if (rand === lastNum) {
+    randomNumber();
+  }
+  lastNum = rand;
+  return rand;
+};
 
 function addImageToRandomCell() {
-	let num = randomNumber();
-	cells[num].appendChild(goblin);
+  const num = randomNumber();
+  cells[num].appendChild(goblin);
 }
 
-//генерируем случайное число
-const randomNumber = () => {
-	let rand = Math.floor( Math.random() * 16);
-	if(rand  === lastNum) {
-		randomNumber() 
-	};
-	lastNum = rand;
-	return rand;
-}
+setInterval(addImageToRandomCell, 3000);
