@@ -1,5 +1,5 @@
 const goblin = document.createElement('img');
-goblin.src = '/src/img/goblin.png';
+goblin.src = 'src/img/goblin.png';
 
 let lastNum = 0;
 
